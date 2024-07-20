@@ -1,0 +1,35 @@
+{
+  "manifest_version":3,
+  "version": "1.0",
+  "name": "Pomo Todo App",
+  "short_name": "PMTD",
+  "description": "This is a simple todo app with pomodoro timer.",
+  "icons": {
+      "16": "icons/i16.png",
+      "48": "icons/i48.png",
+      "128": "icons/i128.png"
+  },
+  "action": {
+      "default_title": "Pomo Todo App",
+      "default_popup": "popup.html",
+      "default_icon": {
+          "16": "icons/i16.png",
+          "48": "icons/i48.png",
+          "128": "icons/i128.png"
+      }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"],
+      "css": ["pomodoro.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
